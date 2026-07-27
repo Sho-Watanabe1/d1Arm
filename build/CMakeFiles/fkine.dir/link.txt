@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/fkine.dir/src/fkine.cpp.o CMakeFiles/fkine.dir/src/msg/PubServoInfo_.cpp.o -o fkine   -L/opt/unitree_robotics/lib  -Wl,-rpath,/opt/unitree_robotics/lib -lunitree_sdk2 -lddsc -lddscxx -lrt -lpthread 

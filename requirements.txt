@@ -1,0 +1,12 @@
+# Minimal runtime dependencies for d1Arm.
+#
+# Setup for virtual environment:
+#   python -m venv venv
+#   source venv/bin/activate
+#   python -m pip install --upgrade pip
+#   python -m pip install -r requirements.txt
+
+numpy
+pytorch_kinematics
+torch
+cyclonedds
