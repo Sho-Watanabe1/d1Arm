@@ -49,5 +49,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/arm_zero_control.dir/DependInfo.cmake"
   "CMakeFiles/get_arm_joint_angle.dir/DependInfo.cmake"
   "CMakeFiles/multi_joint_slider_control.dir/DependInfo.cmake"
-  "CMakeFiles/fkine.dir/DependInfo.cmake"
+  "CMakeFiles/joint_angle_sender.dir/DependInfo.cmake"
   )

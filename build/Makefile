@@ -195,17 +195,17 @@ multi_joint_slider_control/fast:
 .PHONY : multi_joint_slider_control/fast
 
 #=============================================================================
-# Target rules for targets named fkine
+# Target rules for targets named joint_angle_sender
 
 # Build rule for target.
-fkine: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fkine
-.PHONY : fkine
+joint_angle_sender: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 joint_angle_sender
+.PHONY : joint_angle_sender
 
 # fast build rule for target.
-fkine/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fkine.dir/build.make CMakeFiles/fkine.dir/build
-.PHONY : fkine/fast
+joint_angle_sender/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint_angle_sender.dir/build.make CMakeFiles/joint_angle_sender.dir/build
+.PHONY : joint_angle_sender/fast
 
 src/arm_zero_control.o: src/arm_zero_control.cpp.o
 .PHONY : src/arm_zero_control.o
@@ -230,30 +230,6 @@ src/arm_zero_control.s: src/arm_zero_control.cpp.s
 src/arm_zero_control.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/arm_zero_control.dir/build.make CMakeFiles/arm_zero_control.dir/src/arm_zero_control.cpp.s
 .PHONY : src/arm_zero_control.cpp.s
-
-src/fkine.o: src/fkine.cpp.o
-.PHONY : src/fkine.o
-
-# target to build an object file
-src/fkine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fkine.dir/build.make CMakeFiles/fkine.dir/src/fkine.cpp.o
-.PHONY : src/fkine.cpp.o
-
-src/fkine.i: src/fkine.cpp.i
-.PHONY : src/fkine.i
-
-# target to preprocess a source file
-src/fkine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fkine.dir/build.make CMakeFiles/fkine.dir/src/fkine.cpp.i
-.PHONY : src/fkine.cpp.i
-
-src/fkine.s: src/fkine.cpp.s
-.PHONY : src/fkine.s
-
-# target to generate assembly for a file
-src/fkine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fkine.dir/build.make CMakeFiles/fkine.dir/src/fkine.cpp.s
-.PHONY : src/fkine.cpp.s
 
 src/get_arm_joint_angle.o: src/get_arm_joint_angle.cpp.o
 .PHONY : src/get_arm_joint_angle.o
@@ -327,6 +303,30 @@ src/joint_enable_control.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint_enable_control.dir/build.make CMakeFiles/joint_enable_control.dir/src/joint_enable_control.cpp.s
 .PHONY : src/joint_enable_control.cpp.s
 
+src/manual/joint_angle_sender.o: src/manual/joint_angle_sender.cpp.o
+.PHONY : src/manual/joint_angle_sender.o
+
+# target to build an object file
+src/manual/joint_angle_sender.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint_angle_sender.dir/build.make CMakeFiles/joint_angle_sender.dir/src/manual/joint_angle_sender.cpp.o
+.PHONY : src/manual/joint_angle_sender.cpp.o
+
+src/manual/joint_angle_sender.i: src/manual/joint_angle_sender.cpp.i
+.PHONY : src/manual/joint_angle_sender.i
+
+# target to preprocess a source file
+src/manual/joint_angle_sender.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint_angle_sender.dir/build.make CMakeFiles/joint_angle_sender.dir/src/manual/joint_angle_sender.cpp.i
+.PHONY : src/manual/joint_angle_sender.cpp.i
+
+src/manual/joint_angle_sender.s: src/manual/joint_angle_sender.cpp.s
+.PHONY : src/manual/joint_angle_sender.s
+
+# target to generate assembly for a file
+src/manual/joint_angle_sender.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint_angle_sender.dir/build.make CMakeFiles/joint_angle_sender.dir/src/manual/joint_angle_sender.cpp.s
+.PHONY : src/manual/joint_angle_sender.cpp.s
+
 src/msg/ArmString_.o: src/msg/ArmString_.cpp.o
 .PHONY : src/msg/ArmString_.o
 
@@ -338,6 +338,7 @@ src/msg/ArmString_.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/arm_zero_control.dir/build.make CMakeFiles/arm_zero_control.dir/src/msg/ArmString_.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_arm_joint_angle.dir/build.make CMakeFiles/get_arm_joint_angle.dir/src/msg/ArmString_.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multi_joint_slider_control.dir/build.make CMakeFiles/multi_joint_slider_control.dir/src/msg/ArmString_.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint_angle_sender.dir/build.make CMakeFiles/joint_angle_sender.dir/src/msg/ArmString_.cpp.o
 .PHONY : src/msg/ArmString_.cpp.o
 
 src/msg/ArmString_.i: src/msg/ArmString_.cpp.i
@@ -351,6 +352,7 @@ src/msg/ArmString_.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/arm_zero_control.dir/build.make CMakeFiles/arm_zero_control.dir/src/msg/ArmString_.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_arm_joint_angle.dir/build.make CMakeFiles/get_arm_joint_angle.dir/src/msg/ArmString_.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multi_joint_slider_control.dir/build.make CMakeFiles/multi_joint_slider_control.dir/src/msg/ArmString_.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint_angle_sender.dir/build.make CMakeFiles/joint_angle_sender.dir/src/msg/ArmString_.cpp.i
 .PHONY : src/msg/ArmString_.cpp.i
 
 src/msg/ArmString_.s: src/msg/ArmString_.cpp.s
@@ -364,6 +366,7 @@ src/msg/ArmString_.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/arm_zero_control.dir/build.make CMakeFiles/arm_zero_control.dir/src/msg/ArmString_.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_arm_joint_angle.dir/build.make CMakeFiles/get_arm_joint_angle.dir/src/msg/ArmString_.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/multi_joint_slider_control.dir/build.make CMakeFiles/multi_joint_slider_control.dir/src/msg/ArmString_.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint_angle_sender.dir/build.make CMakeFiles/joint_angle_sender.dir/src/msg/ArmString_.cpp.s
 .PHONY : src/msg/ArmString_.cpp.s
 
 src/msg/PubServoInfo_.o: src/msg/PubServoInfo_.cpp.o
@@ -372,7 +375,7 @@ src/msg/PubServoInfo_.o: src/msg/PubServoInfo_.cpp.o
 # target to build an object file
 src/msg/PubServoInfo_.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_arm_joint_angle.dir/build.make CMakeFiles/get_arm_joint_angle.dir/src/msg/PubServoInfo_.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fkine.dir/build.make CMakeFiles/fkine.dir/src/msg/PubServoInfo_.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint_angle_sender.dir/build.make CMakeFiles/joint_angle_sender.dir/src/msg/PubServoInfo_.cpp.o
 .PHONY : src/msg/PubServoInfo_.cpp.o
 
 src/msg/PubServoInfo_.i: src/msg/PubServoInfo_.cpp.i
@@ -381,7 +384,7 @@ src/msg/PubServoInfo_.i: src/msg/PubServoInfo_.cpp.i
 # target to preprocess a source file
 src/msg/PubServoInfo_.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_arm_joint_angle.dir/build.make CMakeFiles/get_arm_joint_angle.dir/src/msg/PubServoInfo_.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fkine.dir/build.make CMakeFiles/fkine.dir/src/msg/PubServoInfo_.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint_angle_sender.dir/build.make CMakeFiles/joint_angle_sender.dir/src/msg/PubServoInfo_.cpp.i
 .PHONY : src/msg/PubServoInfo_.cpp.i
 
 src/msg/PubServoInfo_.s: src/msg/PubServoInfo_.cpp.s
@@ -390,7 +393,7 @@ src/msg/PubServoInfo_.s: src/msg/PubServoInfo_.cpp.s
 # target to generate assembly for a file
 src/msg/PubServoInfo_.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/get_arm_joint_angle.dir/build.make CMakeFiles/get_arm_joint_angle.dir/src/msg/PubServoInfo_.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fkine.dir/build.make CMakeFiles/fkine.dir/src/msg/PubServoInfo_.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint_angle_sender.dir/build.make CMakeFiles/joint_angle_sender.dir/src/msg/PubServoInfo_.cpp.s
 .PHONY : src/msg/PubServoInfo_.cpp.s
 
 src/multi_joint_slider_control.o: src/multi_joint_slider_control.cpp.o
@@ -450,18 +453,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... arm_zero_control"
-	@echo "... fkine"
 	@echo "... get_arm_joint_angle"
 	@echo "... joint_angle_control"
+	@echo "... joint_angle_sender"
 	@echo "... joint_enable_control"
 	@echo "... multi_joint_slider_control"
 	@echo "... multiple_joint_angle_control"
 	@echo "... src/arm_zero_control.o"
 	@echo "... src/arm_zero_control.i"
 	@echo "... src/arm_zero_control.s"
-	@echo "... src/fkine.o"
-	@echo "... src/fkine.i"
-	@echo "... src/fkine.s"
 	@echo "... src/get_arm_joint_angle.o"
 	@echo "... src/get_arm_joint_angle.i"
 	@echo "... src/get_arm_joint_angle.s"
@@ -471,6 +471,9 @@ help:
 	@echo "... src/joint_enable_control.o"
 	@echo "... src/joint_enable_control.i"
 	@echo "... src/joint_enable_control.s"
+	@echo "... src/manual/joint_angle_sender.o"
+	@echo "... src/manual/joint_angle_sender.i"
+	@echo "... src/manual/joint_angle_sender.s"
 	@echo "... src/msg/ArmString_.o"
 	@echo "... src/msg/ArmString_.i"
 	@echo "... src/msg/ArmString_.s"

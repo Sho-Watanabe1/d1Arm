@@ -509,6 +509,9 @@
       velocity="0.02" />
   </joint>
 
+</robot>
+
+<!-- 
   <!-- ============================================================= -->
   <!-- VIRTUAL TCP FRAME (Realigns math axes to physical gripper)    -->
   <!-- ============================================================= -->
@@ -528,6 +531,4 @@
         - Math Z -> Physical Yaw (Real Z)
     -->
     <origin xyz="0 0 0" rpy="1.5708 0 1.5708" />
-  </joint>
-
-</robot>
+  </joint> -->
