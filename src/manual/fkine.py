@@ -23,14 +23,14 @@ def forward_kinematics(q_i):
 
     theta = [theta_1, theta_2, theta_3, theta_4, theta_5, theta_6]
     dh_table = [
-        # (a,        alpha,          d,        theta_offset)
-        (0.0000,  -np.pi/2,      0.1096,              theta_1),
-        (0.2693,   0.0,         -0.0280,   -np.pi/2 + theta_2),
-        (0.0420,  -np.pi/2,      0.0266,              theta_3),
-        (0.0001,   np.pi/2,      0.19788,             theta_4),
-        (0.0011,  -np.pi/2,      0.0001,     -np.pi + theta_5),
-        (0.0000,   0.0,         -0.0825,              theta_6),
-    ]
+    # (a,          alpha,        d,          theta_offset)
+    (0.0000,       np.pi/2,      0.1316,     -theta_1),
+    (0.2700,       0.0,          0.0000,     -theta_2 + np.pi/2),
+    (0.041325,     np.pi/2,      0.0000,     -theta_3),
+    (0.0000,       np.pi/2,      0.204675,    theta_4),
+    (0.0000,      -np.pi/2,      0.0000,      theta_5),
+    (0.0000,       0.0,          0.205744,    theta_6),
+]
 
     dh_array = np.array(dh_table)  # shape (6,4) -> columns: a, alpha, d, theta_offset
 

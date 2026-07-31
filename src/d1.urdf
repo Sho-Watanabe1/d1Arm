@@ -510,25 +510,3 @@
   </joint>
 
 </robot>
-
-<!-- 
-  <!-- ============================================================= -->
-  <!-- VIRTUAL TCP FRAME (Realigns math axes to physical gripper)    -->
-  <!-- ============================================================= -->
-  <link name="tcp_link" />
-
-  <joint name="tcp_joint" type="fixed">
-    <!-- Replace 'Link6' with the exact name of your arm's last link if different -->
-    <parent link="Link6" /> 
-    <child link="tcp_link" />
-    
-    <!-- 
-      rpy = [Roll, Pitch, Yaw] in radians.
-      [1.5708, 0, 1.5708] corresponds to [90 deg, 0 deg, 90 deg].
-      This rotates:
-        - Math X -> Physical Roll (Real X)
-        - Math Y -> Physical Pitch (Real Y)
-        - Math Z -> Physical Yaw (Real Z)
-    -->
-    <origin xyz="0 0 0" rpy="1.5708 0 1.5708" />
-  </joint> -->

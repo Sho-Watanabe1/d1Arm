@@ -4,6 +4,7 @@ from fkine import forward_kinematics
 
 import socket, struct
 
+# Gets output from joint_angle_sender.cpp => run in build folder: ./joint_angle_sender
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind(("127.0.0.1", 9999))
 
