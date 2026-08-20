@@ -142,7 +142,11 @@ class D1CartesianController:
         self._time_since_send = 0.0
         self._suspended = False
 
-        cfg = DifferentialIKControllerCfg(command_type="pose", ik_method="dls")
+        cfg = DifferentialIKControllerCfg(
+            command_type="pose",
+            ik_method="dls",
+            ik_params={"lambda_val": 0.2},   # was defaulting to 0.05
+        )        
         self._ik = DifferentialIKController(cfg, num_envs=num_envs, device=device)
 
         # The smoothed target the solver actually chases, base-relative.
@@ -256,6 +260,10 @@ class D1CartesianController:
             jacobian=snap.jacobian,
             joint_pos=snap.joint_pos,
         )
+
+        max_step = math.radians(5)  # tune to taste
+        delta = torch.clamp(joint_targets - snap.joint_pos, -max_step, max_step)
+        joint_targets = snap.joint_pos + delta
 
         # Out through the D1 API in degrees. Point the client at a real arm and
         # this exact call drives the hardware.

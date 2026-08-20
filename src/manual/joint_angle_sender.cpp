@@ -35,7 +35,7 @@ void Handler1(const void* msg)
 
 int main()
 {
-    ChannelFactory::Instance()->Init(0, "eth0");
+    ChannelFactory::Instance()->Init(0, "eth1");
     ChannelSubscriber<unitree_arm::msg::dds_::PubServoInfo_> subscriber(TOPIC);
     subscriber.InitChannel(Handler);
 

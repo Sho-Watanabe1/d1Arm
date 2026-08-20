@@ -17,4 +17,5 @@ add_executable(arm_zero_control src/arm_zero_control.cpp src/msg/ArmString_.cpp)
 add_executable(get_arm_joint_angle src/get_arm_joint_angle.cpp src/msg/ArmString_.cpp src/msg/PubServoInfo_.cpp)
 add_executable(multi_joint_slider_control src/multi_joint_slider_control.cpp src/msg/ArmString_.cpp)
 add_executable(joint_angle_sender src/manual/joint_angle_sender.cpp src/msg/ArmString_.cpp src/msg/PubServoInfo_.cpp)
+add_executable(angleSender src/manual/angleSender.cpp src/msg/ArmString_.cpp)
 

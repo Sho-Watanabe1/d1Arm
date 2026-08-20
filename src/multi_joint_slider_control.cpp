@@ -42,7 +42,7 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    ChannelFactory::Instance()->Init(0, "eth0");
+    ChannelFactory::Instance()->Init(0, "eth1");
     ChannelPublisher<unitree_arm::msg::dds_::ArmString_> publisher(TOPIC);
     publisher.InitChannel();
 

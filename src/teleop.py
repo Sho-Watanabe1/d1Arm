@@ -14,10 +14,9 @@ from d1_sdk.d1_client import D1Arm
 from d1_ik_controller import D1CartesianController
 from backend import PyTorchKinematicsBackend
 
-
-POS_STEP = 0.005      # very small: 5mm
+POS_STEP = 0.01      # very small: 5mm
 ROT_STEP = 0.03       # ~2 degrees
-SMOOTHING = 0.2       # more smoothing = slower but stable
+SMOOTHING = 0.5       # more smoothing = slower but stable
 
 def multiply_quaternions(q1, q2):
     """
@@ -78,10 +77,11 @@ def main():
         print("  w/s = +X/-X    a/d = +Y/-Y    q/e = +Z/-Z")
         print("  i/k = pitch    j/l = yaw      u/o = roll")
         print("  r = reset to current pose    space = suspend")
+
         print("  Ctrl+C = quit")
         print("=" * 60)
 
-        client = D1Arm(network_interface="eth0")
+        client = D1Arm(network_interface="eth1")
         if hasattr(client, 'set_motor_power'):
             client.set_motor_power(True)
             time.sleep(0.5)

@@ -69,6 +69,21 @@ def quat_apply(quat: torch.Tensor, vec: torch.Tensor) -> torch.Tensor:
 def axis_angle_from_quat(quat: torch.Tensor, eps: float = 1e-6) -> torch.Tensor:
     """Convert quaternion (w, x, y, z) to axis-angle vector (rotation vector)."""
     quat = normalize(quat)
+    # mag = torch.linalg.norm(quat[..., 1:], dim=-1)
+    # half_angle = torch.atan2(mag, quat[..., 0])
+    # angle = 2.0 * half_angle
+    # sin_half = torch.sin(half_angle)
+    # small = sin_half.abs() < eps
+    # scale = torch.where(small, 2.0 * torch.ones_like(sin_half), angle / sin_half.clamp(min=eps))
+    # return quat[..., 1:] * scale.unsqueeze(-1)
+
+    # q and -q represent the same rotation. Always take the representative
+    # with non-negative scalar part so we measure the shortest-path rotation
+    # (angle in [0, pi]) rather than potentially the long way around (angle
+    # in (pi, 2pi]) whenever an upstream FK routine (e.g. pytorch_kinematics's
+    # matrix_to_quaternion, which is not guaranteed continuous across nearby
+    # rotations) flips the overall sign of one of the operands.
+    quat = torch.where(quat[..., 0:1] < 0, -quat, quat)
     mag = torch.linalg.norm(quat[..., 1:], dim=-1)
     half_angle = torch.atan2(mag, quat[..., 0])
     angle = 2.0 * half_angle
